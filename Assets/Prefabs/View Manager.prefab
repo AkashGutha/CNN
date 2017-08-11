@@ -51,5 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07b56fa6a94f42d49a6a4fd348779b88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Title: {fileID: 0}
   UnemploymentRateUI: {fileID: 0}
   USA_Colorizer: {fileID: 0}

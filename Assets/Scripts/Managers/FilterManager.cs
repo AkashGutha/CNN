@@ -3,23 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using CNN;
+
 public class FilterManager : MonoBehaviour
 {
 
-    // Use this for initialization
-    void Start()
+    public ViewManager viewManager;
+    /// <summary>
+    /// Awake is called when the script instance is being loaded.
+    /// </summary>
+    void Awake()
     {
-
+        viewManager.SetFilter(Filter.None);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void FilterData(Int32 index)
     {
         Debug.Log(index);
+        viewManager.SetFilter((Filter)index);
     }
 }

@@ -27,36 +27,31 @@ public class Colorizer : MonoBehaviour
 
         foreach (var state in dataList)
         {
-            // Debug.Log(state.Name);
-
             States[state.Name].GetComponent<Renderer>().sharedMaterial = UnemploymentDataMaterials[state.UnemploymentDecile / 3];
         }
     }
 
-	public void ColorizeByElectionData(){
+    public void ColorizeByElectionData()
+    {
 
-		// get the election data
-		var dataList = UnemploymentDataService.UnemploymentDataList;
-
-        foreach (var state in dataList)
-        {
-            // Debug.Log(state.Name);
-
-			// 
-            States[state.Name].GetComponent<Renderer>().sharedMaterial = DefaultMaterial;
-        }
-	}
-
-	public void ResetColors(){
+        // get the election data
+        var dataList = UnemploymentDataService.UnemploymentDataList;
 
         foreach (var state in dataList)
         {
-            // Debug.Log(state.Name);
-
-			// 
-            States[state.Name].GetComponent<Renderer>().sharedMaterial = ElectionDataMaterials[Random.Range(0,2)];
+            States[state.Name].GetComponent<Renderer>().sharedMaterial =  ElectionDataMaterials[Random.Range(0, 2)];
         }
-	}
+    }
+
+    public void ResetColors()
+    {
+
+        var stateList = StatesService.states_names;
+        foreach (var state in stateList)
+        {
+            States[state].GetComponent<Renderer>().sharedMaterial = DefaultMaterial;
+        }
+    }
 
     void Update()
     {
