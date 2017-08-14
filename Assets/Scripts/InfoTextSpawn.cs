@@ -23,6 +23,5 @@ public class InfoTextSpawn : MonoBehaviour
     {
         Vector2 screenPos = Camera.main.WorldToScreenPoint(this.transform.position + new Vector3(0, Anchor.transform.localScale.y/2+YOffset,0 ) );
         info.transform.position = screenPos;
-
     }
 }

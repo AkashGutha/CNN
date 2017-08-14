@@ -104,7 +104,7 @@ public class ViewManager : MonoBehaviour
             var knob = Instantiate(this.Knob, Vector3.zero, Quaternion.identity);
             knob.transform.position = screenPos;
             knob.transform.SetParent(canvas.transform);
-            string text = string.Format("{0:00.0}", state.UnemploymentRate);
+            string text = string.Format("{0:0.00}", state.UnemploymentRate * 100);
             knob.GetComponent<KnobManager>().UpdateData(text, colors[state.UnemploymentDecile / 3]);
         }
 
@@ -122,7 +122,7 @@ public class ViewManager : MonoBehaviour
             var spawn = Instantiate(this.textObj, Vector3.zero, Quaternion.identity);
             spawn.transform.position = screenPos;
             spawn.transform.SetParent(canvas.transform);
-            string text = string.Format("{0:0.00}", state.UnemploymentRate);
+            string text = string.Format("{0:0.00}", state.UnemploymentRate * 100);
             spawn.GetComponent<Text>().text = text;
         }
 
